@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OCTG Hub — Engineering-first AI for well tubular design</title>
+<meta name="description" content="OCTG Hub builds OCTG.ai — a cloud-native workspace unifying certified stress analysis, OCTG catalog intelligence, and source-grounded AI. Engineering-first AI: the math decides." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="octg.css" />
+</head>
+<body>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav nav--on-dark" id="nav">
+  <a class="brand" href="#top" aria-label="OCTG Hub home">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">OCTG&nbsp;<b>Hub</b></span>
+  </a>
+  <nav class="nav-links">
+    <div class="nav-menu">
+      <a class="nav-link" href="#platform">Platform</a>
+      <a class="nav-link" href="#trust">Trust</a>
+      <a class="nav-link" href="#roadmap">Roadmap</a>
+      <a class="nav-link" href="#customers">Who it's for</a>
+    </div>
+    <a class="btn btn--ghost btn--on-dark" href="#waitlist">Join early access</a>
+  </nav>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow hero-eyebrow">OCTG Hub&nbsp;&nbsp;·&nbsp;&nbsp;Introducing OCTG.ai</span>
+        <h1 class="h-display">Engineering-first AI for <span class="accent">well tubular design.</span></h1>
+        <p class="hero-sub lead">OCTG&nbsp;Hub builds <strong style="color:#fff;font-weight:600">OCTG.ai</strong> — a cloud-native workspace that unifies catalog intelligence, certified stress analysis, and source-grounded retrieval. The mathematical core is third-party certified and immutable. The AI assists, retrieves, and recommends. It never decides.</p>
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="#waitlist">Join early access <span class="arrow">→</span></a>
+          <a class="btn btn--ghost btn--on-dark" href="#platform">See how it works</a>
+        </div>
+        <div class="hero-trust">
+          <span class="lbl">Built on</span>
+          <span class="stdpill"><span class="dot"></span>API TR 5C3</span>
+          <span class="stdpill"><span class="dot"></span>ISO 10400</span>
+          <span class="stdpill"><span class="dot"></span>Third-party certified</span>
+          <span class="stdpill"><span class="dot"></span>HITL validated</span>
+        </div>
+      </div>
+
+      <div class="hero-viz-wrap">
+        <div class="viz-card">
+          <div class="viz-head">
+            <div class="viz-title">Design-limit plot<b>5½″ · 23.0 ppf · L80 · Triaxial (VME)</b></div>
+            <div class="viz-sf">
+              <div class="sf-num" id="sfNum">1.62</div>
+              <div class="sf-lbl">Safety factor</div>
+            </div>
+          </div>
+          <svg id="limitPlot" role="img" aria-label="Interactive triaxial design-limit plot. Drag the operating point to compute the safety factor."></svg>
+          <div class="viz-foot">
+            <div class="reads">
+              <span>Axial <b id="rdAxial">320 klbf</b></span>
+              <span>ΔP <b id="rdPress">6,200 psi</b></span>
+              <span id="rdStatus" style="color:var(--ok)">PASS · DF≥1.25</span>
+            </div>
+            <span class="viz-hint">Drag the point</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CREDIBILITY STRIP ======================= -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-inner" id="strip">
+    <span class="strip-item">API TR 5C3 <span class="sep">/</span> ISO 10400</span>
+    <span class="strip-item">von Mises triaxial analysis</span>
+    <span class="strip-item">Burst <span class="sep">·</span> Collapse <span class="sep">·</span> Axial <span class="sep">·</span> Triaxial</span>
+    <span class="strip-item">Bring-your-own-license RAG</span>
+    <span class="strip-item">Human-in-the-loop catalog QA</span>
+    <span class="strip-item">On-prem / local LLM deployment</span>
+    <span class="strip-item">Byte-for-byte auditability</span>
+    <span class="strip-item">Premium connection envelopes</span>
+  </div>
+</div>
+
+<!-- ======================= PROBLEM ======================= -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The problem</span>
+      <h2 class="h2">OCTG engineering still runs on PDFs, scanned manuals, and spreadsheets.</h2>
+      <p class="lead">The tubular ecosystem is fragmented across manufacturers, standards, and units — and locked into legacy desktop tools that conservative engineering teams trust but can't audit, search, or scale.</p>
+    </div>
+    <div class="prob-grid reveal">
+      <div class="prob-cell">
+        <span class="num">01</span>
+        <h3>Fragmented data &amp; connection silos</h3>
+        <p>Pipe-body specs, premium-connection performance envelopes, and steel grades live in disconnected PDF catalogs and proprietary sheets that never reconcile.</p>
+      </div>
+      <div class="prob-cell">
+        <span class="num">02</span>
+        <h3>The legacy trust barrier</h3>
+        <p>Teams are locked into deeply trusted desktop software and customized Excel models — and rightly skeptical of any "black-box" AI touching safety-critical numbers.</p>
+      </div>
+      <div class="prob-cell">
+        <span class="num">03</span>
+        <h3>Manual, unauditable workflows</h3>
+        <p>Casing and tubing design means manual catalog lookups, hand cross-referencing of standards, and spreadsheet verification with little traceability.</p>
+      </div>
+      <div class="prob-cell">
+        <span class="num">04</span>
+        <h3>Tribal knowledge loss</h3>
+        <p>Critical engineering judgment is buried in non-standardized documents and senior engineers' heads — vulnerable to attrition and impossible to search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PLATFORM / MODULES ======================= -->
+<section class="section" id="platform" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The platform</span>
+      <h2 class="h2">Five modules. One data record. Full lifecycle.</h2>
+      <p class="lead">OCTG.ai is a connected suite built around a certified engineering core. Every tubular is cataloged, designed, sold, stocked, and permanently recorded — one continuous record from spec sheet to wellbore.</p>
+    </div>
+
+    <!-- lifecycle flow -->
+    <div class="lifecycle reveal">
+      <div class="life-head">
+        <span class="lh-title">How the modules connect</span>
+        <span class="lh-sub">heat number · grade · OD/WT · connection — carried end to end</span>
+      </div>
+      <div class="life-track">
+        <div class="life-node">
+          <div class="life-step">Stage 01</div>
+          <div class="life-mod">Catalog<span class="iq">IQ</span></div>
+          <div class="life-verb">Cataloged</div>
+        </div>
+        <span class="life-arrow" aria-hidden="true">→</span>
+        <div class="life-node">
+          <div class="life-step">Stage 02</div>
+          <div class="life-mod">Tubular<span class="iq">IQ</span></div>
+          <div class="life-verb">Designed</div>
+        </div>
+        <span class="life-arrow" aria-hidden="true">→</span>
+        <div class="life-node">
+          <div class="life-step">Stage 03</div>
+          <div class="life-mod">Pipeline<span class="iq">IQ</span></div>
+          <div class="life-verb">Sold · PO</div>
+        </div>
+        <span class="life-arrow" aria-hidden="true">→</span>
+        <div class="life-node">
+          <div class="life-step">Stage 04</div>
+          <div class="life-mod">Yard<span class="iq">IQ</span></div>
+          <div class="life-verb">Stocked</div>
+        </div>
+        <span class="life-arrow" aria-hidden="true">→</span>
+        <div class="life-node">
+          <div class="life-step">Stage 05</div>
+          <div class="life-mod">WellRecord<span class="iq">IQ</span></div>
+          <div class="life-verb">Recorded</div>
+        </div>
+      </div>
+      <p class="life-cap">One data record, full lifecycle — <b>designed → purchased → stocked → installed.</b></p>
+    </div>
+
+    <div class="suite-grid">
+      <!-- TubularIQ -->
+      <article class="smod s-6 reveal">
+        <div class="smod-head">
+          <span class="smod-ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><ellipse cx="20" cy="20" rx="15" ry="9" transform="rotate(-25 20 20)"/><circle cx="24" cy="15" r="2.4" fill="currentColor" stroke="none"/></svg></span>
+          <div>
+            <div class="smod-cat">01 · Engineering</div>
+            <div class="smod-name">Tubular<span class="iq">IQ</span></div>
+          </div>
+        </div>
+        <p class="smod-tag">AI-assisted casing &amp; tubing design workspace, powered by the certified core.</p>
+        <ul class="smod-feats">
+          <li>Certified burst / collapse / triaxial calc engine</li>
+          <li>Interactive load-envelope visualization</li>
+          <li>Parallel validation — Excel vs. system</li>
+          <li>RAG-backed, standards-grounded AI assistant</li>
+          <li>Design audit trail &amp; full reproducibility</li>
+        </ul>
+        <div class="smod-buyer">
+          <span class="bk">Buyer</span>
+          <span class="bv">Well / Drilling Engineer · Consultant</span>
+        </div>
+      </article>
+
+      <!-- PipelineIQ -->
+      <article class="smod s-6 reveal d1">
+        <div class="smod-head">
+          <span class="smod-ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 9 H34 L25 20 V32 L15 28 V20 Z"/></svg></span>
+          <div>
+            <div class="smod-cat">02 · Sales &amp; Commercial</div>
+            <div class="smod-name">Pipeline<span class="iq">IQ</span></div>
+          </div>
+        </div>
+        <p class="smod-tag">OCTG-native CRM for distributors and manufacturers.</p>
+        <ul class="smod-feats">
+          <li>Lead tracking &amp; opportunity pipeline</li>
+          <li>Quote generation direct from live catalog</li>
+          <li>RFQ management</li>
+          <li>Customer engagement history</li>
+          <li>Sales performance analytics</li>
+        </ul>
+        <div class="smod-buyer">
+          <span class="bk">Buyer</span>
+          <span class="bv">Distributor Sales Team · Commercial Manager</span>
+        </div>
+      </article>
+
+      <!-- YardIQ -->
+      <article class="smod s-6 reveal">
+        <div class="smod-head">
+          <span class="smod-ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="6" y="22" width="12" height="10" rx="1"/><rect x="22" y="22" width="12" height="10" rx="1"/><rect x="14" y="9" width="12" height="10" rx="1"/></svg></span>
+          <div>
+            <div class="smod-cat">03 · Inventory &amp; Warehouse</div>
+            <div class="smod-name">Yard<span class="iq">IQ</span></div>
+          </div>
+        </div>
+        <p class="smod-tag">Joint-level OCTG stock management for suppliers and operators.</p>
+        <ul class="smod-feats">
+          <li>Joint-level traceability — heat, grade, OD/WT, connection</li>
+          <li>Inspection certificates &amp; drift records</li>
+          <li>Yard location mapping</li>
+          <li>Stock alerts &amp; reorder triggers</li>
+          <li>Condition grading — new / used / reconditioned</li>
+        </ul>
+        <div class="smod-buyer">
+          <span class="bk">Buyer</span>
+          <span class="bv">Supply Chain Manager · Warehouse Supervisor</span>
+        </div>
+      </article>
+
+      <!-- WellRecordIQ -->
+      <article class="smod s-6 reveal d1">
+        <div class="smod-head">
+          <span class="smod-ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="6" width="22" height="28" rx="2"/><line x1="20" y1="6" x2="20" y2="34"/><line x1="14" y1="13" x2="16" y2="13"/><line x1="14" y1="20" x2="16" y2="20"/><line x1="14" y1="27" x2="16" y2="27"/></svg></span>
+          <div>
+            <div class="smod-cat">04 · Well Integrity &amp; As-Built</div>
+            <div class="smod-name">WellRecord<span class="iq">IQ</span></div>
+          </div>
+        </div>
+        <p class="smod-tag">The permanent tangible record of actual well construction.</p>
+        <ul class="smod-feats">
+          <li>As-built casing/tubing tally — depth, run, joint count</li>
+          <li>Heat number → wellbore traceability</li>
+          <li>Regulatory compliance documentation</li>
+          <li>Anomaly &amp; incident logging</li>
+          <li>Lifecycle link: designed → purchased → stocked → installed</li>
+        </ul>
+        <div class="smod-buyer">
+          <span class="bk">Buyer</span>
+          <span class="bv">Well Integrity Engineer · Regulatory Compliance</span>
+        </div>
+      </article>
+
+      <!-- CatalogIQ (foundation) -->
+      <article class="smod smod--found s-12 reveal">
+        <span class="smod-ribbon">Shared intelligence layer</span>
+        <div class="smod-body">
+          <div>
+            <div class="smod-head">
+              <span class="smod-ic"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><ellipse cx="20" cy="11" rx="13" ry="5"/><path d="M7 11 V29 C7 32 33 32 33 29 V11"/><path d="M7 20 C7 23 33 23 33 20"/></svg></span>
+              <div>
+                <div class="smod-cat">05 · Tubular Intelligence</div>
+                <div class="smod-name">Catalog<span class="iq">IQ</span></div>
+              </div>
+            </div>
+            <p class="smod-tag">The unified, searchable OCTG catalog and connection database every module draws from. Each tubular's life starts here.</p>
+            <div class="smod-buyer">
+              <span class="bk">Buyer</span>
+              <span class="bv">All users — shared intelligence layer</span>
+            </div>
+          </div>
+          <ul class="smod-feats">
+            <li>AI-ingested vendor catalogs — HITL validated</li>
+            <li>Premium connection performance envelopes</li>
+            <li>Cross-reference &amp; alternative finder</li>
+            <li>Specification comparison tool</li>
+            <li>BYOL standards retrieval — API TR 5C3, ISO 10400</li>
+            <li>Normalized across vendors, grades &amp; units</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- Parallel validation spotlight (inside TubularIQ) -->
+    <article class="mod mod-span-12 feature-mod spotlight reveal">
+      <div class="fm-copy">
+        <span class="modnum">Inside TubularIQ · The migration bridge</span>
+        <h3>Parallel Validation</h3>
+        <p>The only workspace built to help engineers move off Excel with proof. Upload a legacy sheet and run a differential analysis against the certified core — value by value, side by side — until trust is earned, not assumed.</p>
+        <div class="modtags">
+          <span class="tag tag--steel">Excel vs. System</span>
+          <span class="tag">Differential analysis</span>
+          <span class="tag">Trust-building</span>
+        </div>
+      </div>
+      <div class="fm-visual">
+        <div class="diff">
+          <div class="diff-row head">
+            <span class="diff-cell label">Check</span>
+            <span>Legacy sheet</span>
+            <span>OCTG.ai</span>
+          </div>
+          <div class="diff-row">
+            <span class="diff-cell label">Burst (DF)</span>
+            <span class="diff-cell"><span class="v">1.31</span></span>
+            <span class="diff-cell match"><span class="v">1.31</span></span>
+          </div>
+          <div class="diff-row">
+            <span class="diff-cell label">Collapse (DF)</span>
+            <span class="diff-cell"><span class="v">1.08</span></span>
+            <span class="diff-cell match"><span class="v">1.08</span></span>
+          </div>
+          <div class="diff-row">
+            <span class="diff-cell label">Axial (DF)</span>
+            <span class="diff-cell"><span class="v">1.74</span></span>
+            <span class="diff-cell match"><span class="v">1.74</span></span>
+          </div>
+          <div class="diff-row">
+            <span class="diff-cell label">Triaxial (VME)</span>
+            <span class="diff-cell"><span class="v">1.59</span></span>
+            <span class="diff-cell match"><span class="v">1.62</span></span>
+          </div>
+          <div class="diff-delta" style="justify-content:flex-end;margin-top:2px">✓ 3 exact matches · 1 within 1.9% (rounding)</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======================= AI BOUNDARY ======================= -->
+<section class="section boundary" id="trust">
+  <div class="wrap">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow eyebrow--center">AI Non-Authority Boundary</span>
+      <h2 class="h2">AI proposes. Deterministic math decides.</h2>
+      <p class="lead">A hard architectural line separates the evolving app layer from the frozen calculation core. Cross it and you'd compromise the audit trail — so nothing does.</p>
+    </div>
+
+    <div class="boundary-diagram reveal">
+      <div class="bd-side bd-ai">
+        <span class="bd-kicker">What AI does</span>
+        <h3>Proposes &amp; retrieves</h3>
+        <ul>
+          <li><span class="mk">+</span> Retrieves and cites licensed standards</li>
+          <li><span class="mk">+</span> Normalizes and extracts catalog data</li>
+          <li><span class="mk">+</span> Surfaces and compares tubular options</li>
+          <li><span class="mk">+</span> Explains methods and flags risks</li>
+        </ul>
+      </div>
+      <div class="bd-wall" aria-hidden="true">
+        <span class="barrier"></span>
+        <span class="bd-flow">→</span>
+        <span class="wall-label">Non-authority boundary</span>
+      </div>
+      <div class="bd-side bd-math">
+        <span class="bd-kicker">What math does</span>
+        <h3>Computes &amp; decides</h3>
+        <ul>
+          <li><span class="mk">×</span> Burst, collapse, axial &amp; triaxial ratings</li>
+          <li><span class="mk">×</span> Safety-factor and compatibility checks</li>
+          <li><span class="mk">×</span> Every certified, reproducible output</li>
+          <li><span class="mk">×</span> The numbers you stake a well on</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="bd-principle reveal">"Engineering-first AI, not AI-first engineering. <span class="accent">AI proposes; deterministic math decides.</span>"</p>
+  </div>
+</section>
+
+<!-- ======================= ROADMAP ======================= -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Roadmap</span>
+      <h2 class="h2">A deliberate path through a conservative industry.</h2>
+      <p class="lead">We certify the mathematical core first, prove it against your own sheets, then scale catalog intelligence and retrieval. Trust before reach.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="phase now reveal" data-p="1">
+        <span class="ph-tag">Phase 1</span>
+        <div class="ph-when">Months 1–6</div>
+        <h3>Frozen core &amp; validation</h3>
+        <ul>
+          <li>Build the immutable physics engine</li>
+          <li>Secure third-party math audit</li>
+          <li>Ship Parallel Validation (Excel vs. System)</li>
+        </ul>
+      </div>
+      <div class="phase reveal d1" data-p=".66">
+        <span class="ph-tag">Phase 2</span>
+        <div class="ph-when">Months 6–12</div>
+        <h3>Pilots &amp; digitization</h3>
+        <ul>
+          <li>White-glove distributor pilots</li>
+          <li>HITL catalog ingestion</li>
+          <li>Byte-for-byte audit trail</li>
+        </ul>
+      </div>
+      <div class="phase reveal d2" data-p=".4">
+        <span class="ph-tag">Phase 3</span>
+        <div class="ph-when">Months 12–18</div>
+        <h3>RAG &amp; PLG scaling</h3>
+        <ul>
+          <li>BYOL standards retrieval</li>
+          <li>Free engineering calculators</li>
+          <li>Premium-connection modules</li>
+        </ul>
+      </div>
+      <div class="phase reveal d3" data-p=".2">
+        <span class="ph-tag">Phase 4</span>
+        <div class="ph-when">Months 18–24+</div>
+        <h3>Enterprise &amp; on-prem</h3>
+        <ul>
+          <li>Multi-user collaboration</li>
+          <li>Local enterprise deployments</li>
+          <li>Trajectory data (WITSML)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CUSTOMERS ======================= -->
+<section class="section" id="customers" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who it's for</span>
+      <h2 class="h2">Built first for the people digitizing the supply chain.</h2>
+      <p class="lead">Our primary go-to-market is OCTG distributors and service companies under pressure to digitize catalogs and recommend alternatives fast — with operators, consultants, and academia close behind.</p>
+    </div>
+    <div class="cust-grid">
+      <div class="cust reveal">
+        <svg class="ci" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="11" width="22" height="15" rx="1.5"/><path d="M4 11 L9 5 H21 L26 11"/><line x1="15" y1="11" x2="15" y2="26"/></svg>
+        <h4>OCTG distributors &amp; service companies</h4>
+        <p>Digitize fragmented catalogs and recommend qualified alternatives during supply-chain crunches.</p>
+        <span class="ctag">Primary GTM</span>
+      </div>
+      <div class="cust reveal d1">
+        <svg class="ci" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="15" cy="15" r="11"/><line x1="15" y1="4" x2="15" y2="26"/><path d="M6 9 H24 M6 21 H24"/></svg>
+        <h4>Mid-sized independent operators</h4>
+        <p>Faster iteration cycles and digital transformation without heavyweight legacy enterprise suites.</p>
+        <span class="ctag" style="color:var(--ink-3)">Growth</span>
+      </div>
+      <div class="cust reveal d2">
+        <svg class="ci" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 4 L26 10 L15 16 L4 10 Z"/><path d="M9 13 V19 C9 22 21 22 21 19 V13"/></svg>
+        <h4>Well engineering consultants</h4>
+        <p>High-mobility users who demand agile, cloud-accessible tools and reproducible, defensible outputs.</p>
+        <span class="ctag" style="color:var(--ink-3)">Growth</span>
+      </div>
+      <div class="cust reveal d3">
+        <svg class="ci" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="13" width="20" height="13" rx="1"/><path d="M15 4 L27 9 L15 14 L3 9 Z"/></svg>
+        <h4>Universities &amp; training</h4>
+        <p>Free calculators build grassroots familiarity and seed the next generation of OCTG engineers.</p>
+        <span class="ctag" style="color:var(--ink-3)">Seed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA / WAITLIST ======================= -->
+<section class="section cta" id="waitlist">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow eyebrow--center" style="justify-content:center">Early access · 2026</span>
+      <h2 class="h2">Get early access to OCTG.ai.</h2>
+      <p class="lead">We're onboarding a small group of distributors and operators for white-glove pilots and certified-core validation. Join the waitlist to be first in line.</p>
+      <form class="cta-actions" id="waitForm" novalidate>
+        <input type="email" id="waitEmail" required placeholder="you@company.com" aria-label="Work email"
+          style="font-family:var(--ff-body);font-size:1rem;padding:13px 18px;border-radius:var(--radius);border:1px solid var(--d-line-2);background:rgba(255,255,255,.05);color:#fff;min-width:280px;outline:none" />
+        <button class="btn btn--primary" type="submit">Request access <span class="arrow">→</span></button>
+      </form>
+      <p class="cta-note" id="waitNote">No spam — pilot invitations and certification milestones only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top" aria-label="OCTG Hub home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">OCTG&nbsp;<b style="color:var(--d-steel)">Hub</b></span>
+      </a>
+      <p class="foot-about">OCTG Hub builds engineering-grade software for the oil &amp; gas tubular ecosystem. Our flagship platform, OCTG.ai, is the trusted AI-assisted workspace for well tubular design.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Modules</h5>
+      <a href="#platform">TubularIQ — Engineering</a>
+      <a href="#platform">PipelineIQ — Sales</a>
+      <a href="#platform">YardIQ — Inventory</a>
+      <a href="#platform">WellRecordIQ — Integrity</a>
+      <a href="#platform">CatalogIQ — Intelligence</a>
+    </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#customers">Who it's for</a>
+      <a href="#trust">Trust &amp; safety</a>
+      <a href="#waitlist">Early access</a>
+    </div>
+    <div class="foot-col">
+      <h5>Standards</h5>
+      <a href="#trust">API TR 5C3</a>
+      <a href="#trust">ISO 10400</a>
+      <a href="#trust">Third-party audit</a>
+      <a href="#trust">HITL validation</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 OCTG Hub. All rights reserved.</span>
+    <span>octghub.com · Engineering-first AI, not AI-first engineering.</span>
+  </div>
+</footer>
+
+<script src="octg.js"></script>
+
+<!-- waitlist (visual only) -->
+<script>
+  (function () {
+    var f = document.getElementById("waitForm");
+    if (!f) return;
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("waitEmail");
+      var note = document.getElementById("waitNote");
+      if (!email.value || !/.+@.+\..+/.test(email.value)) {
+        note.textContent = "Please enter a valid work email.";
+        note.style.color = "var(--d-amber)";
+        return;
+      }
+      f.innerHTML = '<div style="font-family:var(--ff-mono);color:var(--d-steel);font-size:1rem;padding:13px 0">✓ You\'re on the list. We\'ll be in touch.</div>';
+      note.textContent = "Welcome aboard — pilot invitations go out in waves.";
+      note.style.color = "var(--d-fg-3)";
+    });
+  })();
+</script>
+
+<!-- ======================= TWEAKS ======================= -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+  const ACCENTS = {
+    "Steel blue": ["#2f6fb0", "#214f80", "#e4eef7", "#5fa0d8"],
+    "Slate":      ["#4a5b78", "#33405a", "#e7eaf1", "#8094b5"],
+    "Indigo":     ["#3f5bb5", "#2c4189", "#e7eaf8", "#7a90e0"],
+    "Teal steel": ["#1f7f8b", "#155860", "#d8eef0", "#52b3bf"]
+  };
+  const SIGNALS = {
+    "Amber":  ["#b5832b", "#f3e8cf", "#e0ab4d"],
+    "Copper": ["#b0612e", "#f1ddcf", "#df8a4d"],
+    "Gold":   ["#947b12", "#efe8c6", "#d8bb3e"]
+  };
+  const FONTS = { "Space Grotesk": "'Space Grotesk'", "Sora": "'Sora'", "Archivo": "'Archivo'" };
+
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "Steel blue",
+    "signal": "Amber",
+    "displayFont": "Sora"
+  }/*EDITMODE-END*/;
+
+  function applyTweaks(t) {
+    const r = document.documentElement.style;
+    const a = ACCENTS[t.accent] || ACCENTS["Steel blue"];
+    r.setProperty("--steel", a[0]);
+    r.setProperty("--steel-deep", a[1]);
+    r.setProperty("--steel-soft", a[2]);
+    r.setProperty("--d-steel", a[3]);
+    const s = SIGNALS[t.signal] || SIGNALS["Amber"];
+    r.setProperty("--amber", s[0]);
+    r.setProperty("--amber-soft", s[1]);
+    r.setProperty("--d-amber", s[2]);
+    r.setProperty("--ff-display", (FONTS[t.displayFont] || FONTS["Space Grotesk"]) + ", system-ui, sans-serif");
+  }
+
+  function App() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(() => { applyTweaks(t); }, [t]);
+    return (
+      <TweaksPanel>
+        <TweakSection label="Brand accent" />
+        <TweakRadio label="Primary" value={t.accent}
+          options={Object.keys(ACCENTS)} onChange={(v) => setTweak("accent", v)} />
+        <TweakRadio label="Signal" value={t.signal}
+          options={Object.keys(SIGNALS)} onChange={(v) => setTweak("signal", v)} />
+        <TweakSection label="Typography" />
+        <TweakRadio label="Display font" value={t.displayFont}
+          options={Object.keys(FONTS)} onChange={(v) => setTweak("displayFont", v)} />
+      </TweaksPanel>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("tweaks-root")).render(<App />);
+</script>
+
+</body>
+</html>
