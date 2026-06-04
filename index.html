@@ -511,15 +511,11 @@
       <span class="eyebrow eyebrow--center" style="justify-content:center">Early access · 2026</span>
       <h2 class="h2">Get early access to OCTG.ai.</h2>
       <p class="lead">We're onboarding a small group of distributors and operators for white-glove pilots and certified-core validation. Join the waitlist to be first in line.</p>
-      <div data-fs-success style="display:none;font-family:var(--ff-mono);color:var(--d-steel);font-size:1rem;padding:13px 0">✓ You're on the list. We'll be in touch.</div>
-      <div data-fs-error style="display:none;font-family:var(--ff-mono);color:var(--d-amber);font-size:0.85rem;margin-bottom:8px"></div>
       <form class="cta-actions" id="waitForm" novalidate>
         <input type="email" id="waitEmail" name="email" required placeholder="you@company.com" aria-label="Work email"
-          data-fs-field
           style="font-family:var(--ff-body);font-size:1rem;padding:13px 18px;border-radius:var(--radius);border:1px solid var(--d-line-2);background:rgba(255,255,255,.05);color:#fff;min-width:280px;outline:none" />
-        <button class="btn btn--primary" type="submit" data-fs-submit-btn>Request access <span class="arrow">→</span></button>
+        <button class="btn btn--primary" id="waitBtn" type="submit">Request access <span class="arrow">→</span></button>
       </form>
-      <span data-fs-error="email" style="font-family:var(--ff-mono);color:var(--d-amber);font-size:0.82rem;display:block;margin-top:6px"></span>
       <p class="cta-note" id="waitNote">No spam — pilot invitations and certification milestones only.</p>
     </div>
   </div>
@@ -567,12 +563,49 @@
 
 <script src="octg.js"></script>
 
-<!-- waitlist (Formspree) -->
+<!-- waitlist (Formspree fetch) -->
 <script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#waitForm', formId: 'xqeokyqn' });
+  (function () {
+    var form  = document.getElementById('waitForm');
+    var btn   = document.getElementById('waitBtn');
+    var note  = document.getElementById('waitNote');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('waitEmail');
+      if (!email.value || !/.+@.+\..+/.test(email.value)) {
+        note.textContent = 'Please enter a valid work email.';
+        note.style.color = 'var(--d-amber)';
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch('https://formspree.io/f/xqeokyqn', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.value })
+      })
+      .then(function (res) {
+        if (res.ok) {
+          form.innerHTML = '<div style="font-family:var(--ff-mono);color:var(--d-steel);font-size:1rem;padding:13px 0">✓ You\'re on the list. We\'ll be in touch.</div>';
+          note.textContent = 'Welcome aboard — pilot invitations go out in waves.';
+          note.style.color = 'var(--d-fg-3)';
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = 'Request access <span class="arrow">→</span>';
+          note.textContent = 'Something went wrong — please try again.';
+          note.style.color = 'var(--d-amber)';
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.innerHTML = 'Request access <span class="arrow">→</span>';
+        note.textContent = 'Network error — please try again.';
+        note.style.color = 'var(--d-amber)';
+      });
+    });
+  })();
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <!-- ======================= TWEAKS ======================= -->
 <div id="tweaks-root"></div>
